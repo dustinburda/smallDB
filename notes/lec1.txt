@@ -1,0 +1,184 @@
+Database systems are everywhere:
+    - Banking
+    - Healthcare
+    - Airlines
+    - E-Commerce
+
+Studying DB systems will teach you:
+    - Curiosity
+    - Scalability
+    - Efficiency
+    - Versatility
+
+
+    - Storage Management
+    - Query Optimization
+    - Index Structures
+    - SIMD Instructions
+
+
+- We will learn to build a DB system from scratch
+- Become proficient in systems programming
+
+
+- We will study:
+    - Relational Databases
+    - Storage Management
+    - Index Structures
+    - Query Execution
+
+Later (different course)
+    - Logging and Recovery
+    - Concurrency Control
+    - Query Optimization
+
+
+Suppose we have an application:
+
+    Social Media Analytics -> Social Trends
+                              Sentiments
+                              Interactions
+
+
+
+A flat-file database system:
+
+    Data -> Users.txt
+            Posts.txt
+            Interactions.txt
+
+
+Users.txt:
+
+UserName                      Location
+Timothée Chalamet,             Paris
+Lana Condor,                   Los Angeles
+Liu Yifei,                     Beijing
+Burna Boy,                     Lagos
+Kriti Sanon,                   Mumbai
+
+
+
+Posts.txt
+
+PostID,             UserName,                   Location
+1001,               Timothée Chalamet,    Excited to start filming my new movie!
+1002,               Lana Candor           Had a great time at the beach today! 🌊☀
+1003,               Liu Yifei,            Enjoying the scenery in Beijing! 🏞
+1004,               Burna Boy,            Live performance tonight in Lagos! 🎤🎶
+1005,               Kriti Sanon,          Loving the vibrant energy of Mumbai!
+
+
+etc
+
+
+
+1) Flat File Databases suffer from redundancy
+    PostID, UserName, Location
+    1001, Timothée Chalamet, Excited to start filming my new movie!
+    1006, Timothée Chalamet, Exploring the streets of Paris! 🇫🇷‍
+    1007, Timothée Chalamet, Just wrapped up a day of filming 🎬
+    1008, Timothée Chalamet, Any book recommendations?
+
+2) Flat File Databases suffer from slow operations
+   Deleting a record requires linear search
+
+3) Flat file databases suffer from slow queries
+
+4) Flat file databases suffer from a lack of concurrent updates
+
+5) Flat file databases *something something disk failiures idk...* (No atomicity?)
+
+6) Flat file databases *something something memory management* (Must load entire file into memory?)
+
+7) Flat file databases are difficult to use
+    Require custom code to query DB
+
+    def get_comments_by_user(file_path, user_name):
+        comments = []
+        with open(file_path, 'r') as file:
+            for line in file:
+                post_id, user, reaction_type, comment_text = line.strip().split(', ')
+                if user == user_name and reaction_type == 'Comment':
+                    comments.append((post_id, comment_text))
+
+        return comments
+
+
+
+Relational databases
+
+            Column/Attribute
+                UserName             Location
+Row/Tuple      Timothee Chalamet        Paris
+               Liu Yifei                Beijing
+               Burna Boy                Lagos
+               ...
+               Kriti Sanon              Mumbai
+
+
+
+Relation database use:
+    - Mathematical set theory
+    - Data sets relationship
+    - Efficient Data Set Links
+
+
+Students   Grades
+Alice        B
+Bob          A
+Charlie      C
+
+
+
+
+
+Relational Databases
+
+List of Tables ----> Storage Formats and Indexing Data Structures
+(Logical)               (Physical)
+
+
+
+
+
+Logical DB Design  ----->      Simple Query Language for Complex Data Manipulation
+-----------------------------------------------------------------------------------------------
+Physical DB Design ----->      Optimizing Indexing or Storage Hardware
+
+
+
+Logical DB Design: Primary Key, Foreign Key
+
+
+
+
+Benefits of Relational DB:
+    1) No Data Redundancy
+    2) Fast Operations
+        - Efficient Data Deletion
+        - User (Tuple) Removal
+        - Fast Deletion
+    3) Fast Queries
+        - Index Database
+        - Apps in labeled folders
+        - Location-based index
+
+        SELECT *
+        FROM Users
+        WHERE LOCATION = 'Mumbai';
+    4) Concurrent Updates
+
+        Transaction 1           Transaction 3
+                Concurrency Control       Concurrency Control
+
+
+    5) Handling Disk Failures
+        Atomic Transactions --> "All or Nothing"
+
+
+    6)
+
+
+
+
