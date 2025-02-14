@@ -1,0 +1,42 @@
+Relational Operators:
+    Select (Projection Operator) -> Select specific columns from a table
+    Where (Selection Operator) -> Filter rows based on specified conditions
+    Group By (Grouping Operator) -> Group rows of same values (Used with aggregate functions like SUM)
+    Sum (Aggregation Operator) -> Adds group values (defined by Group By clause)
+    Join (Join Operator) -> Links rows from two different tables
+
+
+
+Relation Algebra:
+
+SELECT Interactions.PostID,
+COUNT(*) AS Likes,
+Users.UserID, Users.Username
+FROM Interactions
+JOIN Users ON Interactions.UserID =
+Users.UserID
+WHERE Interactions.ReactionType = 'Like'
+GROUP BY Interactions.PostID,
+Users.UserID,
+Users.Username
+ORDER BY Likes DESC;
+
+Combine Operators
+Filter Interactions
+Combine Tables
+Group and Count Results
+Project Fields
+Sort Popular Posts
+
+Τ Likes DESC
+    (π PostID, Likes, UserID, Username
+        (γ PostID, UserID, Username;
+            COUNT(∗)→Likes
+            (σ ReactionType=′Like′
+            (Interactions) ⨝ Users)
+        )
+    )
+
+
+
+

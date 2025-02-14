@@ -177,7 +177,18 @@ Benefits of Relational DB:
         Atomic Transactions --> "All or Nothing"
 
 
-    6)
+    6) Memory Management
+        Cache pages on disk
+
+   7) Usability
+        SQL provides a simple declarative way to interact with DB.
+
+
+
+
+   Summary:
+    - Drawbacks of flat-file databases
+    -
 
 
 
