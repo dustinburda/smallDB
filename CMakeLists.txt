@@ -3,4 +3,6 @@ project(smallDB)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(smallDB ./src/main.cpp ./src/Tuple.cpp)
+file(GLOB SOURCE_FILES "src/*.cpp")
+
+add_executable(smallDB ${SOURCE_FILES})
