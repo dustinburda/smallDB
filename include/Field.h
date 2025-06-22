@@ -6,20 +6,32 @@
 #define SMALLDB_FIELD_H
 
 #include <string>
-#include <variant>
-
-enum class FieldType {
-    Int,
-    String
-};
 
 class Field {
 public:
-    explicit Field(std::string s) : value_(std::move(s)), type_{FieldType::String} {}
-    explicit Field(std::int64_t num) : value_(num), type_{FieldType::Int} {}
+    Field() = delete;
+
+    explicit Field(int data);
+    explicit Field(float data);
+    explicit Field(std::string data);
+    explicit Field(bool data);
+
+    void Serialize(std::ostream& o);
+
+    void Deserialize(Field& f);
+    Field Deserialize();
+
 private:
-    std::variant<std::int64_t, std::string> value_;
+    enum class FieldType {
+        Int,
+        Float,
+        String,
+        Bool
+    };
+
     FieldType type_;
+    std::size_t length_;
+    char* data_;
 };
 
 
