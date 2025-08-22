@@ -7,15 +7,19 @@
 
 #include "../include/Field.h"
 
+#include <ostream>
 #include <vector>
 
 class Tuple {
 public:
-    explicit Tuple(Field f) : tuples_{ std::vector<Field>{f} } {};
-    explicit Tuple(std::vector<Field> tuples) : tuples_{tuples} {};
+    explicit Tuple(Field f) : fields_{ std::vector<Field>{f} } {};
+    explicit Tuple(std::vector<Field> fields) : fields_{fields} {};
+
+    void Serialize(std::ostream& o);
+
 
 private:
-    std::vector<Field> tuples_;
+    std::vector<Field> fields_;
 };
 
 

@@ -24,3 +24,27 @@ Field::Field(bool data)
         : type_{FieldType::Bool}, length_{ sizeof(bool) } {
     std::memcpy(data_, &data, sizeof(bool) );
 }
+
+void Field::Serialize(std::ostream& o) {
+    o.write(reinterpret_cast<char*>(&type_), sizeof( int));
+
+    o.write(reinterpret_cast<char*>(&length_), sizeof( std::size_t ));
+
+    o.write(reinterpret_cast<char*>( data_ ), length_);
+}
+
+
+
+void Field::Deserialize(std::istream& i, Field& f) {
+    FieldType type;
+    i.read(reinterpret_cast<char *>(&type), sizeof (int));
+
+    int length;
+    i.read(reinterpret_cast<char *>(&length), sizeof (std::size_t));
+
+
+}
+
+Field Field::Deserialize(std::istream& i) {
+    return Field(0);
+}

@@ -5,7 +5,10 @@
 #ifndef SMALLDB_FIELD_H
 #define SMALLDB_FIELD_H
 
+#include <ostream>
+#include <istream>
 #include <string>
+
 
 class Field {
 public:
@@ -18,8 +21,8 @@ public:
 
     void Serialize(std::ostream& o);
 
-    void Deserialize(Field& f);
-    Field Deserialize();
+    void Deserialize(std::istream& i, Field& f);
+    Field Deserialize(std::istream& i);
 
 private:
     enum class FieldType {
